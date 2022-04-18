@@ -12,9 +12,13 @@ on:
     # types: [ closed ]
     branches: [ main ]
 
+env:
+  USERNAME: ${{ github.actor }}
+  TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  MAVEN_URL: https://maven.pkg.github.com/lnsantos/LibraryExampleGithubPackages
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -37,10 +41,4 @@ jobs:
       run: ./gradlew app:assemble
       
     - name: Publish to GitHub Packages
-      uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
-      with:
-        arguments: publish
-      env:
-        USERNAME: ${{ github.actor }}
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        MAVEN_URL: "https://maven.pkg.github.com/lnsantos/LibraryExampleGithubPackages"
+      run: ./gradlew publish
