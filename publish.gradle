@@ -1,7 +1,7 @@
 ext {
     libraryGroupId = "com.lnsantos"
     libraryArtifactId = "example"
-    libraryVersion = "1.0.2"
+    libraryVersion = "1.0.4"
 }
 
 def myLibraryMavenURL = project.findProperty("EXAMPLE_GITHUB_MAVEN_URL") ?: System.getenv("MAVEN_URL")
