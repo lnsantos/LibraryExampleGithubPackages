@@ -19,7 +19,6 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -42,6 +41,4 @@ jobs:
       run: ./gradlew app:assemble
       
     - name: Publish to GitHub Packages
-      uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
-      with:
-        arguments: publish
+      run: ./gradlew publish
