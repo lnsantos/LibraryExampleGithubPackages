@@ -43,4 +43,4 @@ jobs:
       env:
         USERNAME: ${{ github.actor }}
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        MAVEN_URL: "https://maven.pkg.github.com/lnsantos/LibraryExampleGithubPackages"
+        MAVEN_URL: https://maven.pkg.github.com/lnsantos/LibraryExampleGithubPackages
